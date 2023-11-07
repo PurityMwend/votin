@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Dashboard</title>
+    <style>
+        /* CSS for styling the dashboard */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 5px;
+            padding: 6px;
+            background-color: #f4f4f4;
+        }
+        #sidebar {
+            width: 250px;
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            position: fixed;
+            height: 100%;
+        }
+        #content {
+            margin-left: 270px;
+            padding: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+        .user-profile {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">registered Candidates</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <h1>Welcome to the Dashboard</h1>
+        <div class="user-profile">
+            <h2>User Profile</h2>
+            <p>Username: PurityM</p>
+            <p>Email: puritym@gmail.com</p>
+        </div>
+        <h2>Vying Candidates</h2>
+        <ul id="candidatesList">
+            <li>
+                <strong>Candidate 1:John Kimani</strong>
+                <p>Party: Comrades Alliance</p>
+                <p>Age: 25</p>
+                <p>course: Bsc Data Science</p>
+                <p>Department: SCM</p>
+            </li>
+            <li>
+                <strong>Candidate 2: liz Makena</strong>
+                <p>Party: Voice Of Coopa</p>
+                <p>Age: 27</p>
+                <p>course: Bsc Commerce</p>
+                <P>Department: School Of Accounting</P>
+            </li>
+        </ul>
+        <div class>
+            <h2> Thankyou For Voting! </h2>
+            <form id="voting-form">
+                <label for="candidate">Select a candidate:</label>
+                <select id="candidate" name="candidate">
+                    <option value="candidate1">John Kimani</option>
+                    <option value="candidate2">Liz Makena</option>
+                </select>
+                <button type="button" id="vote-button">Vote</button>
+            </form>
+            <div id="voting-result">
+                <p>NOTE: THIS IS THE OFFICIAL VOTING PAGE!</p>
+                <p>Once voted, you can't vote again</p>
+            </div>
+        </div>
+        <h2>Results</h2>
+        <p id="votingResults">The winning team will be displayed here.</p>
+
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const votingForm = document.getElementById("voting-form");
+            const voteButton = document.getElementById("vote-button");
+            const votingResult = document.getElementById("voting-result");
+
+            voteButton.addEventListener("click", function() {
+                const selectedCandidate = document.getElementById("candidate").value;
+                // You would typically send the vote data to the server here.
+                // For this example, we'll just display a "Thank you for voting" message.
+                votingForm.style.display = "none";
+                votingResult.style.display = "block";
+            });
+        });
+    </script>
+
+</body>
+</html>
